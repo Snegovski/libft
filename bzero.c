@@ -10,6 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
+#include "libft.h"
+
 void ft_bzero(void *s, size_t n)
 
+{
+	char *v;
+	v = (char *)s;
+
+	int b;
+	b = 0;
+	while(b < n )
+	{
+		v[b] = 0;
+		b++;
+	}
+	return(s);
+}
+}
 

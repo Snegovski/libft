@@ -18,4 +18,6 @@
 # include <stdlib.h>
 # include <string.h>
 
+int ft_atoi( char *str);
+
 #endif

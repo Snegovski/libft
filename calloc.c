@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   calloc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 03:21:29 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 03:21:29 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/09/14 04:49:37 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/09/14 04:49:37 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c) 
-{	
-	if (c >= 'A' && c <= 'Z') 
+#include "libft.h"
+
+void *calloc(size_t nmemb, size_t size)
+
+{
+	void *c;
+	c = malloc(nmemb * size);
+		
+	char *v;
+	v = (char *)c;
+
+	int b;
+	b = 0;
+	while(b < count * size )
 	{
-			c = c + 32;
+		v[b] = 0;
+		b++;
 	}
-	return (c);
+	return(c);
+	
 }

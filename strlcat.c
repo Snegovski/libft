@@ -13,27 +13,24 @@
 int ft_strlcat( char dest, char src, int n)
 
 {
-	int c;
-	int v;
+	size_t	d;
+	size_t	i;
+	size_t	s;
 
-	dest = 0;
-	src = 0;
-
-	c = dest;
-	v = src;
-
-	while( c != '\0')
+	if (dst == NULL && dstsize == 0)
+		return (0);
+	s = ft_strlen(src);
+	d = ft_strlen(dst);
+	if (d >= dstsize)
+		return (dstsize + s);
+	i = 0;
+	while (i < s && i + d + 1 < dstsize)
 	{
-		c++;
+		dst[d + i] = src[i];
+		i++;
 	}
-	while( v != '\0' && v < n)
-	{
-		c = v;
-		c++;
-		v++;
-	}
-
-	c = '\0';
-
-	return(v);
+		dst[d + i] = '\0';
+	if (dstsize < d)
+		d = dstsize;
+	return (d + s);
 }

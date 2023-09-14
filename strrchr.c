@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 03:21:29 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 03:21:29 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/09/14 04:15:08 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/09/14 04:15:08 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c) 
-{	
-	if (c >= 'A' && c <= 'Z') 
+#include "libft.h"
+
+char *strchr(const char *s, int c)
+
+{
+	char *str;
+
+	str = (char *)s;
+
+	int v;
+
+	v = 0;
+
+	while(str[v] != '\0')
 	{
-			c = c + 32;
+		v++;
 	}
-	return (c);
+
+	while(str[v] != c)
+	{
+		v--;
+	}
+	return(str+v);
+
 }

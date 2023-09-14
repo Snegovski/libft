@@ -12,16 +12,9 @@
 
 int ft_toupper(int c) 
 {
-	while( c != '\0')
+	if (c >= 'a' && c <= 'z') 
 	{
-	
-    	if (c >= 'a' && c <= 'z') 
-		{
-    		 c - 32;
-    	}
-		c++;
+			c - 32;
 	}
-
 	return (c);
-
 }

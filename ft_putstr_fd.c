@@ -10,20 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void ft_putstr_fd(char *s, int fd)
 
 {
 	int c;
 	c = 0;
 
-	if( s[c] != '\0')
-	{
-		return(0);
-	}
-
 	while(s[c] != '\0')
 	{
-		ft_putstr_fd(s[c], fd)
+		write(fd, &s[c], 1);
 		c++;
 	}
 }
+

@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 03:21:29 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 03:21:29 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/09/14 04:34:14 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/09/14 04:34:14 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c) 
-{	
-	if (c >= 'A' && c <= 'Z') 
+#include "libft.h"
+
+ void *ft_memcpy(void *dest, const void *src, size_t n)
+{
+
+	char *c;
+	char *v; 
+
+	c = (char *)dest;
+	v = (char *)src;
+
+	int b;
+	b = 0;
+
+	while( b < n)
 	{
-			c = c + 32;
+		c[b] = v[b];
+		b++;
 	}
-	return (c);
+	return(c);
+
 }

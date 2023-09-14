@@ -13,20 +13,13 @@
 char	*ft_strchr(const char *s, int c)
 
 {
-	char *s = 0;
-	char str;
+	char *str;
 	
 
-	str = (char *s);
-
-	if(str == char *s)
+	str = (char *)s;
+	while(*str != c)
 	{
-		return(char *)s;
+		str++;
 	}
-	str++;
-	if (c == '\0') 
-	{
-        return (char *)str;
-	}
-	 
+	return(str);
 }

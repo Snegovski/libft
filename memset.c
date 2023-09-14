@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   memset.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 03:21:29 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 03:21:29 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/09/14 04:41:01 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/09/14 04:41:01 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c) 
-{	
-	if (c >= 'A' && c <= 'Z') 
+#include "libft.h"
+
+void *ft_memset(void *s, int c, size_t n)
+
+{
+	char *v;
+	v = (char *)s;
+
+	int b;
+	b = 0;
+	while(b < n )
 	{
-			c = c + 32;
+		v[b] = c;
+		b++;
 	}
-	return (c);
+	return(s);
 }

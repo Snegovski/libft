@@ -31,9 +31,9 @@ int ft_strdup(char *str)
 
 	while( str[c] != '\0')
 	{
-		str[c] = v[c]
+		v[c] = str[c]
 		c++;
 	}
-
+	v[c] = '\0';
 	return(v);
 }
