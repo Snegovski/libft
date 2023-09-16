@@ -1,2 +1,2 @@
 # libft
-Your First Library
+First project(duh)
