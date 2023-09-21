@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 05:11:43 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/08/20 05:11:43 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/09/21 07:51:39 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/09/21 07:51:39 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include "libft.c"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+
 {
-	if( ( c >= 'A' && c <= 'Z' ) && ( c >= 'a' && c <= 'z') )
-	{
-		return (1);
-	}
-	else
-	{
-		return(0);
-	}
+size_t c;
+size_t v;
+char *str;
+
+str = (char *) malloc(sizeof(char) * (len + 1));
+if (str == 0)
+{
+	return(0);
+}
+
+c = start;
+v = 0;
+
+while(v < len)
+{
+	str[v] = s[c];
+	c++;
+	v++;
+} 
+str[v] = 0;
+
+return(str);
+
 }

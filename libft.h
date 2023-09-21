@@ -19,5 +19,8 @@
 # include <string.h>
 
 int ft_atoi( char *str);
+int ft_strlen( char *str );
+char	*ft_strchr(const char *s, int c);
+int ft_strlcpy(char *dest, char *src, int n);
 
 #endif
