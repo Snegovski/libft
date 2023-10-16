@@ -42,8 +42,7 @@ int ft_atoi( char *str)
 	}
 	while( str[c] >= '0' && str[c] <= '9')
 	{
-		b = (b * 10) + str[c] - '0';
-		c++;
+
 	}
 	return(b * v);
 }
