@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str = (char *)malloc(sizeof(char) * (v - c + 1));
 		if (str)
 		{
-			ft_strlcpy(str, &s1[v], v - c + 1);
+			ft_strlcpy(str, (char *)&s1[v], v - c + 1);
 		}
 	}
 	return (str);

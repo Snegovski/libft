@@ -24,9 +24,11 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		v++;
 	}
-	while (str[v] != c)
+	while (v != 0 && str[v] != c)
 	{
 		v--;
 	}
+	if (v == 0 && str[v] != c)
+		return (NULL);
 	return (str + v);
 }

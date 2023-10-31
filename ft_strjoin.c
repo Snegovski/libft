@@ -27,11 +27,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		return (0);
 	}
+	c = 0;
 	while (s1[c] != '\0')
 	{
 		str[c] = s1[c];
 		c++;
 	}
+	v = 0;
 	while (s2[v] != '\0')
 	{
 		str[c + v] = s2[v];
