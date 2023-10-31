@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:38:35 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/30 20:14:16 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:23:01 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	while (s[b] != '\0')
 	{
-		v[b] = f (b, s[b]);
+		v[b] = f(b, s[b]);
 		b++;
 	}
 	v[b] = '\0';

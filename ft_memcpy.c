@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 04:22:22 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 04:22:22 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:44:37 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:44:37 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memchr(const void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	char	*c;
+	char	*v;
+	int		b;
 
- {
-	char *str = (char *)s
-
-
-	int v;
-	v = 0;
-
-	while(v < n)
+	c = (char *)dest;
+	v = (char *)src;
+	b = 0;
+	while (b < n)
 	{
-		if( str[v] == c)
-		{
-			return(str + v);
-		}
-		v++;
+		c[b] = v[b];
+		b++;
 	}
-	return(0);
- }
+	return (c);
+}

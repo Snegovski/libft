@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 04:34:14 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 04:34:14 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:45:09 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:45:09 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
+
 {
+	char	*v;
+	int		b;
 
-	char *c;
-	char *v; 
-
-	c = (char *)dest;
-	v = (char *)src;
-
-	int b;
+	v = (char *)s;
 	b = 0;
-
-	while( b < n)
+	while (b < n)
 	{
-		c[b] = v[b];
+		v[b] = c;
 		b++;
 	}
-	return(c);
-
+	return (s);
 }

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+        
 	+:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+      
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+      
 	+#+        */
 /*                                                +#+#+#+#+#+  
 	+#+           */
-/*   Created: 2023/09/04 01:30:09 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/04 01:30:09 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 12:38:54 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 12:38:54 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_bzero(void *s, size_t n)
 
 {
-	int	c;
+	char	*v;
+	int		b;
 
-	c = 0;
-	while (s[c] != '\0')
+	v = (char *)s;
+	b = 0;
+	while (b < n)
 	{
-		write(fd, &s[c], 1);
-		c++;
+		v[b] = 0;
+		b++;
 	}
+	return ;
 }

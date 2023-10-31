@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 08:48:38 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/21 08:48:38 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:59:31 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:59:31 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen( char const *str )
-
+int	ft_tolower(int c)
 {
-	int c;
-	c = 0;
-	
-	while( str[c] != '\0' )
+	if (c >= 'A' && c <= 'Z')
 	{
-		c++;
+		c = c + 32;
 	}
-
-	return(c);
-}
-
-
-int main(void)
-{
-
-	int mazi [] = "Waleed";
-	ft_strlen(mazi);
-	return(0);
+	return (c);
 }

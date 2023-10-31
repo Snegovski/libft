@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strrchr.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 04:15:08 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 04:15:08 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:14:40 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:14:40 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strchr(const char *s, int c)
-
+int	ft_strncmp( char *s1, char *s2, int n)
 {
-	char *str;
+	int	c;
 
-	str = (char *)s;
-
-	int v;
-
-	v = 0;
-
-	while(str[v] != '\0')
+	c = 0;
+	n = 0;
+	while ((s1[c] == s2[c]) && (s1[c] != '\0') && (c < n))
 	{
-		v++;
+		c++;
 	}
-
-	while(str[v] != c)
+	if (c == n)
 	{
-		v--;
+		return (0);
 	}
-	return(str+v);
-
+	return (s1[c] - s2[c]);
 }

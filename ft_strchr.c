@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 04:41:01 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 04:41:01 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:49:42 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:49:42 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 
 {
-	char *v;
-	v = (char *)s;
+	char	*str;
 
-	int b;
-	b = 0;
-	while(b < n )
+	str = (char *)s;
+	while (*str != c)
 	{
-		v[b] = c;
-		b++;
+		str++;
 	}
-	return(s);
+	return (str);
 }

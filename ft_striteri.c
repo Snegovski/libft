@@ -6,13 +6,13 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:09:35 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/30 19:37:53 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:08:08 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 {
 	int	c;
@@ -24,7 +24,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 	while (s[c] != '\0')
 	{
-		f (c, s + c);
+		f(c, s + c);
 		c++;
 	}
 }

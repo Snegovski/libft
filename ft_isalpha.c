@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_ft_isalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 13:47:16 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/31 13:47:16 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:33:39 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:33:39 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
-
+int	ft_isalpha(int c)
 {
-	int	c;
-
-	c = 0;
-	while (s[c] != '\0')
+	if ((c >= 'A' && c <= 'Z') && (c >= 'a' && c <= 'z'))
 	{
-		write(fd, &s[c], 1);
-		c++;
+		return (1);
 	}
-	write(fd, "\n", 1);
+	else
+	{
+		return (0);
+	}
 }

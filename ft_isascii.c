@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+        
 	+:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+      
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+      
 	+#+        */
 /*                                                +#+#+#+#+#+  
 	+#+           */
-/*   Created: 2023/09/04 01:30:09 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/04 01:30:09 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:38:54 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:38:54 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_isascii(int c)
 
 {
-	int	c;
-
-	c = 0;
-	while (s[c] != '\0')
+	if (c >= 0 && c <= 127)
 	{
-		write(fd, &s[c], 1);
-		c++;
+		return (1);
+	}
+	else
+	{
+		return (0);
 	}
 }

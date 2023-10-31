@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+       +#+        */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 05:21:53 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 05:21:53 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:47:55 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:47:55 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putnbr_fd(int n, int fd)
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
 
 {
 	if (n == -2147483648)

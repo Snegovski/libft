@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 13:47:16 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/31 13:47:16 by ral-bakr         ###   ########.fr       */
+/*   Created: 2023/10/31 13:22:37 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/10/31 13:22:37 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
-
+int	ft_strlen(char const *str)
 {
 	int	c;
 
 	c = 0;
-	while (s[c] != '\0')
+	while (str[c] != '\0')
 	{
-		write(fd, &s[c], 1);
 		c++;
 	}
-	write(fd, "\n", 1);
+	return (c);
 }
+
+// int	main(void)
+// {
+// 	int mazi[] = "Waleed";
+// 	ft_strlen(mazi);
+// 	return (0);
+// }
