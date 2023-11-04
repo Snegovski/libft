@@ -17,12 +17,14 @@
 # define LIBFT_H
 
 # include <stdio.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <limits.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 int		ft_strlen(char const *str);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcpy(char *dest, char *src, size_t n);

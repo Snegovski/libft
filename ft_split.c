@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 02:50:27 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/31 13:48:57 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:46:28 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*pointerassignment(char const *s, int *j, char c)
 		l++;
 	}
 	z = malloc(sizeof(char) * ((l - *j) + 1));
+	if (!z)
+		return (NULL);
 	l = 0;
 	while (s[*j] != c && s[*j] != '\0')
 	{
@@ -76,8 +78,12 @@ char	**ft_split(char const *s, char c)
 	v = 0;
 	b = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	b = wordcontainer(s, c);
 	p = malloc(sizeof(char *) * (b + 1));
+	if (!p)
+		return (NULL);
 	while (v < b)
 	{
 		p[v] = pointerassignment(s, &j, c);

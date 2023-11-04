@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 20:16:02 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/31 21:00:33 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:11:34 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	b = 0;
 	c = (unsigned char *)dst;
 	v = (unsigned char *)src;
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	if (v < c)
 	{

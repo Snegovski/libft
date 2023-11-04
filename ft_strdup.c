@@ -24,6 +24,8 @@ char	*ft_strdup(char *str)
 		c++;
 	}
 	v = malloc(sizeof(char) * (c + 1));
+	if (!v)
+		return (NULL);
 	c = 0;
 	while (str[c] != '\0')
 	{

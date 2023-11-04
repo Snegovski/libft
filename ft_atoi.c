@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: ral-bakr <ral-bakr@42student.ae>           +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2023/09/14 03:23:09 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/09/14 03:23:09 by ral-bakr         ###   ########.fr       */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 13:14:43 by ral-bakr          #+#    #+#             */
+/*   Updated: 2023/11/02 13:18:40 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
-
+int	ft_atoi(const char *str)
 {
 	int	c;
 	int	v;
@@ -27,13 +23,12 @@ int	ft_atoi(char *str)
 	b = 0;
 	while ((str[c] == ' ') || (str[c] >= 9 && str[c] <= 13))
 		c++;
-	if (str[c] == '-')
+	if (str[c] == '-' || (str[c] == '+'))
 	{
-		v = -1;
-		c++;
-	}
-	if (str[c] == '+')
-	{
+		if (str[c] == '-')
+		{
+			v = -1;
+		}
 		c++;
 	}
 	while (str[c] >= '0' && str[c] <= '9')
@@ -43,9 +38,9 @@ int	ft_atoi(char *str)
 	}
 	return (b * v);
 }
-// int	main(void)
+//  int	main(void)
 // {
-// 	char *mazi = "265";
+// 	char *mazi = "-+48";
 // 	int c = ft_atoi(mazi);
 // 	int d = atoi(mazi);
 // 	printf("%d -- %d\n", c, d);

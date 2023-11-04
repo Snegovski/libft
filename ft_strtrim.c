@@ -24,19 +24,27 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		c = 0;
 		while (s1[c] && ft_strchr(set, s1[c]))
-		{
 			c++;
-		}
 		v = ft_strlen(s1);
-		while (s1[v - 1] && ft_strchr(set, s1[v - 1]) && v < c)
-		{
+		v--;
+		while (s1[v] && ft_strchr(set, s1[v]) && v > c)
 			v--;
-		}
-		str = (char *)malloc(sizeof(char) * (v - c + 1));
+		str = (char *)malloc(sizeof(char) * (v - c + 2));
 		if (str)
-		{
-			ft_strlcpy(str, (char *)&s1[v], v - c + 1);
-		}
+			ft_strlcpy(str, (char *)s1 + c, v - c + 2);
+	}
+	else if (s1 != 0 && set != 0 && s1[0] == '\0')
+	{
+		str = (char *)malloc(sizeof(char) * (1));
+		str[0] = '\0';
+		return (str);
 	}
 	return (str);
 }
+
+// int main()
+// {
+
+// 	printf("%s", ft_strtrim("xyz123", "xyz"));
+
+// }

@@ -12,20 +12,16 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 
 {
 	void	*c;
-	char	*v;
-	size_t	b;
 
-	c = malloc(nmemb * size);
-	v = (char *)c;
-	b = 0;
-	while (b < nmemb * size)
-	{
-		v[b] = 0;
-		b++;
-	}
+	if (size && (count > (UINT_MAX / size)))
+		return (NULL);
+	c = malloc(count * size);
+	if (c == NULL)
+		return (NULL);
+	ft_bzero(c, count * size);
 	return (c);
 }
