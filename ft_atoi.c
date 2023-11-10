@@ -6,43 +6,69 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:14:43 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/02 13:18:40 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:01:06 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	handling_overflow(const char *str, int sign)
+
+{
+	long	total;
+	long	temporary;
+	int		index;
+
+	index = 0;
+	total = 0;
+	while (str[index] >= '0' && str[index] <= '9')
+	{
+		temporary = total;
+		total = total * 10 + str[index] - '0';
+		if (temporary > total)
+		{
+			if (sign == -1)
+				return (0);
+			else
+				return (-1);
+		}
+		index++;
+	}
+	return (total * sign);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	c;
-	int	v;
-	int	b;
+	int			index;
+	int			sign;
 
-	c = 0;
-	v = 1;
-	b = 0;
-	while ((str[c] == ' ') || (str[c] >= 9 && str[c] <= 13))
-		c++;
-	if (str[c] == '-' || (str[c] == '+'))
+	index = 0;
+	sign = 1;
+	while ((str[index] == ' ') || (str[index] >= 9 && str[index] <= 13))
+		index++;
+	if (str[index] == '-' || (str[index] == '+'))
 	{
-		if (str[c] == '-')
-		{
-			v = -1;
-		}
-		c++;
+		if (str[index] == '-')
+			sign = -1;
+		index++;
 	}
-	while (str[c] >= '0' && str[c] <= '9')
-	{
-		b = b * 10 + str[c] - '0';
-		c++;
-	}
-	return (b * v);
+	return (handling_overflow(str + index, sign));
 }
-//  int	main(void)
+
+// int	main(void)
+
 // {
-// 	char *mazi = "-+48";
-// 	int c = ft_atoi(mazi);
-// 	int d = atoi(mazi);
-// 	printf("%d -- %d\n", c, d);
+// 	printf("%d\n", atoi("-000000003"));
+// 	printf("%d\n", ft_atoi("-000000003"));
 // 	return (0);
+// }
+
+// int	main(void)
+
+// {
+// 	char	*v;
+// 	char	b[6] = "53737";
+
+// 	v = b;
+// 	printf("%d,%d\n", ft_atoi(v), atoi(v));
 // }

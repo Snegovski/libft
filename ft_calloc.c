@@ -15,13 +15,13 @@
 void	*ft_calloc(size_t count, size_t size)
 
 {
-	void	*c;
+	void	*memory_output;
 
 	if (size && (count > (UINT_MAX / size)))
 		return (NULL);
-	c = malloc(count * size);
-	if (c == NULL)
+	memory_output = malloc(count * size);
+	if (memory_output == NULL)
 		return (NULL);
-	ft_bzero(c, count * size);
-	return (c);
+	ft_bzero(memory_output, count * size);
+	return (memory_output);
 }

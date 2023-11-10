@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:45:27 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/04 13:35:34 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:40:59 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	stringnumbercounter(int n)
 	v = 0;
 	if (n == 0)
 		return (1);
-	if (n == -2147483648)
-		return (11);
 	if (n < 0)
 	{
 		v++;
@@ -41,9 +39,9 @@ char	*ft_itoa(int n)
 	int		c;
 
 	pointer1 = 0;
-	c = stringnumbercounter(n);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	c = stringnumbercounter(n);
 	if (n == 0)
 		return (ft_strdup("0"));
 	pointer1 = malloc(sizeof(char) * (c + 1));

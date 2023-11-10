@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 20:16:02 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/04 15:11:34 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:12:08 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	printf("%p\n", ft_memmove(dest, src, 8));
 // 	printf("%p\n", memmove(dest, src, 8));
 // 	return (0);
+// }
+
+// int main(void)
+
+// {
+// 	char s [] = "hello world";
+// 	// char v [] = "Salve commodus";
+// 	printf("%s\n", ft_memmove(s, s + 6, 3));
+
 // }
