@@ -28,7 +28,7 @@ typedef struct s_list
 }	t_list;
 
 int		ft_atoi(const char *str);
-int		ft_strlen(char const *str);
+size_t	ft_strlen(char const *str);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcpy(char *dest, char *src, size_t n);
 char	*ft_strdup(char *str);
