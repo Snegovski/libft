@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 02:50:27 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/04 15:46:28 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:40:34 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,10 @@ char	*pointerassignment(char const *s, int *j, char c)
 
 	l = 0;
 	while (s[*j] == c)
-	{
 		(*j)++;
-	}
 	l = *j;
 	while (s[l] != c && s[l] != '\0')
-	{
 		l++;
-	}
 	z = malloc(sizeof(char) * ((l - *j) + 1));
 	if (!z)
 		return (NULL);
@@ -52,9 +48,7 @@ int	wordcontainer(char const *s, char c)
 	while (s[n] != '\0')
 	{
 		while (s[n] == c)
-		{
 			n++;
-		}
 		while (s[n] != c && s[n] != '\0')
 		{
 			n++;

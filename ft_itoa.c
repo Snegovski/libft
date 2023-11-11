@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:45:27 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/10 12:40:59 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:12:01 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	pointer1 = malloc(sizeof(char) * (c + 1));
-	if (!pointer1)
+	if (pointer1 == NULL)
 		return (NULL);
 	pointer1[c--] = '\0';
 	if (n < 0)
