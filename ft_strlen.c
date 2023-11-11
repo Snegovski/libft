@@ -18,9 +18,7 @@ int	ft_strlen(char const *str)
 
 	c = 0;
 	while (str[c] != '\0')
-	{
 		c++;
-	}
 	return (c);
 }
 
