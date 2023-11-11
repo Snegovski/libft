@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:09:35 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/10/31 13:08:08 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/11 13:09:58 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	c = 0;
 	if (!s || !f)
-	{
 		return ;
-	}
 	while (s[c] != '\0')
 	{
 		f(c, s + c);

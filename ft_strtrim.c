@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	str = 0;
-	if (s1 != 0 && set != 0 && s1[0] != '\0')
+	if (s1 != NULL && set != NULL && s1[0] != '\0')
 	{
 		c = 0;
 		while (s1[c] && ft_strchr(set, s1[c]))
@@ -37,7 +37,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		str = (char *)malloc(sizeof(char) * (1));
 		str[0] = '\0';
-		return (str);
 	}
 	return (str);
 }
@@ -46,5 +45,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 // {
 
 // 	printf("%s", ft_strtrim("xyz123", "xyz"));
+// xyzaxyz xyz
 
 // }
