@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:00:54 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/06 13:52:31 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/13 22:15:32 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*point;
 
-	if (!lst)
+	if (lst == NULL)
 		return (NULL);
 	point = lst;
-	while (point)
+	while (point != NULL)
 	{
 		if (point->next == NULL)
 			return (point);

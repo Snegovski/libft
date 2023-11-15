@@ -15,29 +15,23 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 {
-	size_t	v;
-	char	*str;
+	size_t	index;
+	char	*sub_string;
 
 	if (start > (unsigned int)ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > (unsigned long)ft_strlen(s))
 		len = (unsigned long)ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	sub_string = (char *)malloc(sizeof(char) * (len + 1));
+	if (sub_string == NULL)
 		return (NULL);
-	v = 0;
-	while (v < len && s[start] != '\0')
+	index = 0;
+	while (index < len && s[start] != '\0')
 	{
-		str[v] = s[start];
+		sub_string[index] = s[start];
 		start++;
-		v++;
+		index++;
 	}
-	str[v] = '\0';
-	return (str);
+	sub_string[index] = '\0';
+	return (sub_string);
 }
-
-// int	main(void)
-// {
-// 	char * s = ft_substr("tripouille", 0, 42000);
-// 	printf("%s", s);
-// }

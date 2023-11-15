@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:14:43 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/10 23:20:20 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:15:08 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,3 @@ int	ft_atoi(const char *str)
 	}
 	return (handling_overflow(str + index, sign));
 }
-
-// int	main(void)
-
-// {
-// 	printf("%d\n", atoi("-000000003"));
-// 	printf("%d\n", ft_atoi("-000000003"));
-// 	return (0);
-// }
-
-// int	main(void)
-
-// {
-// 	char	*v;
-// 	char	b[6] = "53737";
-
-// 	v = b;
-// 	printf("%d,%d\n", ft_atoi(v), atoi(v));
-// }

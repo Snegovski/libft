@@ -6,100 +6,83 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 02:50:27 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/11 17:40:34 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:13:06 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*pointerassignment(char const *s, int *j, char c)
+char	*get_single_string(char const *s, int *s_index, char c)
 
 {
-	int		l;
-	char	*z;
+	int		index;
+	char	*single_string;
 
-	l = 0;
-	while (s[*j] == c)
-		(*j)++;
-	l = *j;
-	while (s[l] != c && s[l] != '\0')
-		l++;
-	z = malloc(sizeof(char) * ((l - *j) + 1));
-	if (!z)
+	index = 0;
+	while (s[*s_index] == c)
+		(*s_index)++;
+	index = *s_index;
+	while (s[index] != c && s[index] != '\0')
+		index++;
+	single_string = malloc(sizeof(char) * ((index - *s_index) + 1));
+	if (single_string == NULL)
 		return (NULL);
-	l = 0;
-	while (s[*j] != c && s[*j] != '\0')
+	index = 0;
+	while (s[*s_index] != c && s[*s_index] != '\0')
 	{
-		z[l] = s[*j];
-		l++;
-		(*j)++;
+		single_string[index] = s[*s_index];
+		index++;
+		(*s_index)++;
 	}
-	z[l] = '\0';
-	return (z);
+	single_string[index] = '\0';
+	return (single_string);
 }
 
-int	wordcontainer(char const *s, char c)
+int	word_counter(char const *s, char c)
 {
-	int	n;
-	int	m;
+	int	index;
+	int	word_count;
 
-	n = 0;
-	m = 0;
-	while (s[n] != '\0')
+	index = 0;
+	word_count = 0;
+	while (s[index] != '\0')
 	{
-		while (s[n] == c)
-			n++;
-		while (s[n] != c && s[n] != '\0')
+		while (s[index] == c)
+			index++;
+		while (s[index] != c && s[index] != '\0')
 		{
-			n++;
-			if (s[n] == c || s[n] == '\0')
+			index++;
+			if (s[index] == c || s[index] == '\0')
 			{
-				m++;
+				word_count++;
 				break ;
 			}
 		}
 	}
-	return (m);
+	return (word_count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		v;
-	int		b;
-	int		j;
-	char	**p;
+	int		index;
+	int		word_count;
+	int		s_index;
+	char	**split_array;
 
-	v = 0;
-	b = 0;
-	j = 0;
-	if (!s)
+	index = 0;
+	word_count = 0;
+	s_index = 0;
+	if (s == NULL)
 		return (NULL);
-	b = wordcontainer(s, c);
-	p = malloc(sizeof(char *) * (b + 1));
-	if (!p)
+	word_count = word_counter(s, c);
+	split_array = malloc(sizeof(char *) * (word_count + 1));
+	if (split_array == NULL)
 		return (NULL);
-	while (v < b)
+	while (index < word_count)
 	{
-		p[v] = pointerassignment(s, &j, c);
-		v++;
+		split_array[index] = get_single_string(s, &s_index, c);
+		index++;
 	}
-	p[v] = 0;
-	return (p);
+	split_array[index] = 0;
+	return (split_array);
 }
-
-// int	main(void)
-// {
-// 	char	**divide;
-// 	int		i;
-
-// 	i = 0;
-// 	divide = ft_split("shcmmmmmmlicmk", 'm');
-// 	while (divide[i])
-// 	{
-// 		printf("WORD: %s\n", divide[i]);
-// 		free(divide[i]);
-// 		i++;
-// 	}
-// 	free(divide);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:47:22 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/06 12:59:35 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/13 21:59:20 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list		*tmp;
-	int			i;
+	t_list		*temporary;
+	int			index;
 
-	tmp = lst;
-	i = 0;
-	while (tmp != NULL)
+	temporary = lst;
+	index = 0;
+	while (temporary != NULL)
 	{
-		i++;
-		tmp = tmp->next;
+		index++;
+		temporary = temporary->next;
 	}
-	return (i);
+	return (index);
 }

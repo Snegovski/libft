@@ -21,10 +21,3 @@ size_t	ft_strlen(char const *str)
 		c++;
 	return (c);
 }
-
-// int	main(void)
-// {
-// 	int mazi[] = "Waleed";
-// 	ft_strlen(mazi);
-// 	return (0);
-// }

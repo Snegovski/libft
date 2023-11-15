@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 20:16:02 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/10 16:12:08 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:14:13 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,47 +15,27 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 
 {
-	unsigned char		*c;
-	const unsigned char	*v;
-	size_t				b;
+	unsigned char		*modified_dest;
+	const unsigned char	*modified_src;
+	size_t				index;
 
-	b = 0;
-	c = (unsigned char *)dst;
-	v = (unsigned char *)src;
+	index = 0;
+	modified_dest = (unsigned char *)dst;
+	modified_src = (unsigned char *)src;
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	if (v < c)
+	if (modified_src < modified_dest)
 	{
-		while (++b <= len)
-			c[len - b] = v[len - b];
+		while (++index <= len)
+			modified_dest[len - index] = modified_src[len - index];
 	}
 	else
 	{
-		while (b < len)
+		while (index < len)
 		{
-			c[b] = v[b];
-			b++;
+			modified_dest[index] = modified_src[index];
+			index++;
 		}
 	}
 	return (dst);
 }
-
-// int	main(void)
-// {
-// 	char	src[] = "lorem ipsum dolor sit amet";
-// 	char	*dest;
-
-// 	dest = src + 1;
-// 	printf("%p\n", ft_memmove(dest, src, 8));
-// 	printf("%p\n", memmove(dest, src, 8));
-// 	return (0);
-// }
-
-// int main(void)
-
-// {
-// 	char s [] = "hello world";
-// 	// char v [] = "Salve commodus";
-// 	printf("%s\n", ft_memmove(s, s + 6, 3));
-
-// }

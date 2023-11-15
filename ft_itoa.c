@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:45:27 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/11 17:12:01 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:14:39 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,3 @@ char	*ft_itoa(int n)
 	}
 	return (pointer1);
 }
-
-// int	main(void)
-
-// {
-// 	char *test;
-// 	test = ft_itoa(-2147483648);
-// 	printf("%s RESULT\n", test);
-// 	free(test);
-// 	return (0);
-// }

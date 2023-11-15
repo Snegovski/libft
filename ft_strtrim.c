@@ -40,11 +40,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
-
-// int main()
-// {
-
-// 	printf("%s", ft_strtrim("xyz123", "xyz"));
-// xyzaxyz xyz
-
-// }
